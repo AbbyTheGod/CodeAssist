@@ -42,6 +42,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
 ```
 
+> **Note**: After Docker installation, close and restart your WSL terminal for Docker to work properly.
+
 ### 2. Python 3.10+
 
 ```bash
