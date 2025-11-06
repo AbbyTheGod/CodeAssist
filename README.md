@@ -52,7 +52,7 @@ python3 --version
 
 If not installed:
 ```bash
-sudo apt install python3.10
+sudo apt install python3
 ```
 
 ### 3. UV
