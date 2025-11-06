@@ -1,24 +1,19 @@
 # CodeAssist Installation Guide (WSL 2 & Linux)
 
-Installation guide for CodeAssist on Windows (WSL 2) and Linux.
+Installation guide for CodeAssist. All commands below work for both WSL 2 and Linux.
+
+> **What is WSL 2?** WSL 2 (Windows Subsystem for Linux) is a feature in Windows that lets you run a Linux environment directly on Windows. If you're on Windows, you can use WSL 2 instead of dual-booting or using a VM.
 
 ## System Requirements
 
 - **RAM**: 12 GB minimum (32 GB recommended)
 - **Storage**: 10 GB free space
-- **OS**: Windows (WSL 2) or Linux (Ubuntu 22.04+)
+- **OS**: Windows with WSL 2, or Linux (Ubuntu 22.04+)
 
 ## Prerequisites
 
 ### 1. Docker
 
-**Windows (WSL 2):**
-```bash
-winget install Docker.DockerDesktop
-```
-Or download from [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-
-**Linux:**
 ```bash
 sudo apt update -y && sudo apt upgrade -y
 
@@ -44,11 +39,13 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo docker run hello-world
+
+sudo service docker start
+
+sudo usermod -aG docker $USER
 ```
 
-**Start Docker:**
-- **Windows**: Start Docker Desktop
-- **Linux**: `sudo systemctl start docker && sudo systemctl enable docker`
+> **Note**: After adding yourself to the docker group, exit and restart your terminal/WSL session for changes to take effect.
 
 ### 2. Python 3.10+
 
@@ -94,8 +91,9 @@ Access the web UI at `http://localhost:3000` and log in (Gensyn Testnet account 
 ## Troubleshooting
 
 **Docker not running:**
-- **Windows**: Start Docker Desktop
-- **Linux**: `sudo systemctl restart docker`
+```bash
+sudo service docker start
+```
 
 **Permission denied:**
 ```bash
