@@ -38,14 +38,9 @@ sudo apt update -y && sudo apt upgrade -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# Test Docker
 sudo docker run hello-world
-
-sudo service docker start
-
-sudo usermod -aG docker $USER
 ```
-
-> **Note**: After adding yourself to the docker group, exit and restart your terminal/WSL session for changes to take effect.
 
 ### 2. Python 3.10+
 
